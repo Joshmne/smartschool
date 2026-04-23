@@ -1,0 +1,119 @@
+/* app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary:  #4B5563;
+  --trust:    #0047AB;
+  --accent:   #F4A261;
+  --success:  #00A651;
+  --danger:   #EF4444;
+  --surface:  #F8F9FA;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background: var(--surface);
+    -webkit-tap-highlight-color: transparent;
+  }
+  input, select, textarea, button {
+    font-family: inherit;
+  }
+  /* Hide scrollbars but keep scroll */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer components {
+  /* Mobile-first phone frame */
+  .phone-safe {
+    @apply max-w-[430px] mx-auto min-h-screen relative;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply w-full h-14 rounded-xl bg-primary text-white font-bold text-base
+           transition-all duration-150 active:scale-95 active:opacity-90
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Accent button */
+  .btn-accent {
+    @apply w-full h-14 rounded-xl bg-accent text-white font-bold text-base
+           transition-all duration-150 active:scale-95;
+  }
+
+  /* Outline button */
+  .btn-outline {
+    @apply w-full h-14 rounded-xl border-2 border-primary text-primary font-bold text-base
+           bg-white transition-all duration-150 active:scale-95;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-border p-4;
+  }
+
+  /* Input */
+  .input {
+    @apply w-full h-12 px-4 rounded-xl border-2 border-border bg-white text-ink
+           text-sm font-medium transition-colors duration-200
+           focus:outline-none focus:border-primary placeholder:text-muted;
+  }
+
+  /* Select */
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+
+  /* Label */
+  .label {
+    @apply block text-sm font-semibold text-ink mb-2;
+  }
+
+  /* Small score cell */
+  .score-cell {
+    @apply w-12 h-10 text-center text-sm font-semibold rounded-lg border-2
+           border-border focus:border-success focus:outline-none bg-white
+           transition-colors duration-150;
+  }
+
+  /* Status badge */
+  .badge-success { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-success/10 text-success text-xs font-bold; }
+  .badge-warning { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent/10 text-accent text-xs font-bold; }
+  .badge-danger  { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-danger/10 text-danger text-xs font-bold; }
+  .badge-trust   { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-trust/10 text-trust text-xs font-bold; }
+
+  /* Metric card */
+  .metric-card {
+    @apply card flex flex-col gap-1;
+  }
+  .metric-value {
+    @apply text-2xl font-extrabold tracking-tight;
+  }
+  .metric-label {
+    @apply text-xs text-muted font-medium;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    @apply animate-pulse bg-border rounded-xl;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply sticky top-0 z-40 bg-white border-b border-border px-5 py-3 flex items-center gap-3;
+  }
+}
+
+/* Scrollbar for grid */
+.grid-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.grid-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+.grid-scroll::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 99px; }

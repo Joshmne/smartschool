@@ -1,0 +1,19 @@
+{
+  "name": "SmartSchool",
+  "short_name": "SmartSchool",
+  "description": "Revenue-Protected School OS for Nigerian schools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F9FA",
+  "theme_color": "#4B5563",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable any" }
+  ],
+  "screenshots": [
+    { "src": "/screenshots/home.png", "sizes": "375x812", "type": "image/png" }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en-NG"
+}
